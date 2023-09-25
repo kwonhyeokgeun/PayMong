@@ -26,20 +26,6 @@
             android:value="@string/game_services_project_id"/>
 
         <service
-            android:name=".ForegroundService"
-            android:enabled="true"
-            android:exported="true" />
-
-         <receiver
-             android:name=".BootReceiver"
-             android:enabled="true"
-             android:exported="true">
-             <intent-filter>
-             <action android:name="android.intent.action.BOOT_COMPLETED" />
-             </intent-filter>
-         </receiver>
-
-        <service
             android:name="com.paymong.AppDataLayerListenerService"
             android:exported="true">
             <intent-filter>

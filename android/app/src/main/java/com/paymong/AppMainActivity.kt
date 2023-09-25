@@ -70,9 +70,7 @@ class AppMainActivity : ComponentActivity(), CapabilityClient.OnCapabilityChange
         // appViewModel
         appViewModelFactory = AppViewModelFactory(this.application)
         appViewModel = ViewModelProvider(this@AppMainActivity, appViewModelFactory)[AppViewModel::class.java]
-        // 포그라운드 서비스 실행
-        val serviceIntent = Intent(this, ForegroundService::class.java)
-        this.startForegroundService(serviceIntent)
+
 
         setContent {
             AppMain(appLandinglViewModel)

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -59,11 +60,13 @@ class AppLandinglViewModel(
                 if (isAuthenticated) {
                     playersClient.currentPlayer.addOnCompleteListener { mTask: Task<Player?>? ->
                         playerId = mTask?.result?.playerId.toString()
+                        Log.d("페이몽로그","로그인 성공 id:"+playerId)
                         login()
                     }
                 }
                 // 계정을 찾을 수 없음
                 else {
+                    Log.d("페이몽로그","로그인 실패")
                     landingCode = LandingCode.LOGIN_FAIL
                 }
             }
